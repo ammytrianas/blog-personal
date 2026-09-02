@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi Blog Personal | Ammy Triana Santa</title>
+
+    <style>
+
+        /* ==============================
+           ESTILOS GENERALES
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #fdf5f5;
+            color: #4a3434;
+        }
+
+
+        /* ==============================
+           ENCABEZADO
+        ============================== */
+
+        header {
+            background: linear-gradient(
+                135deg,
+                #e8a6b8,
+                #f5d6d0,
+                #d996a9
+            );
+
+            color: #ffffff;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 21px;
+        }
+
+
+        /* ==============================
+           MENU
+        ============================== */
+
+        nav {
+            background-color: #fff8f6;
+            padding: 18px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            box-shadow: 0 3px 10px rgba(100, 50, 50, 0.12);
+        }
+
+        nav a {
+            color: #8f5364;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d47791;
+        }
+
+
+        /* ==============================
+           SECCIONES
+        ============================== */
+
+        section {
+            max-width: 1050px;
+            margin: 45px auto;
+            padding: 40px;
+
+            background-color: white;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 8px 25px rgba(150, 90, 100, 0.12);
+        }
+
+        section h2 {
+            color: #c46f86;
+            font-size: 32px;
+            margin-bottom: 22px;
+        }
+
+        section p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+
+        /* ==============================
+           PRESENTACIÓN
+        ============================== */
+
+        .presentacion {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .foto {
+
+            width: 190px;
+            height: 190px;
+
+            border-radius: 50%;
+
+            background: linear-gradient(
+                135deg,
+                #e9b2c1,
+                #f7ddd8
+            );
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 75px;
+
+            flex-shrink: 0;
+
+            border: 6px solid #f4d4d4;
+        }
+
+
+        /* ==============================
+           TARJETAS
+        ============================== */
+
+        .tarjetas {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+
+            margin-top: 25px;
+        }
+
+        .tarjeta {
+
+            background-color: #fff4f5;
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            transition: 0.3s;
+
+            border: 1px solid #f1d1d7;
+        }
+
+        .tarjeta:hover {
+
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 10px 20px
+                rgba(180, 100, 120, 0.15);
+        }
+
+        .icono {
+
+            font-size: 48px;
+
+            margin-bottom: 12px;
+        }
+
+        .tarjeta h3 {
+
+            color: #bd657e;
+
+            margin-bottom: 10px;
+        }
+
+        .tarjeta p {
+
+            font-size: 16px;
+        }
+
+
+        /* ==============================
+           LISTA DE GUSTOS
+        ============================== */
+
+        .gustos {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 18px;
+
+            margin-top: 20px;
+        }
+
+        .gusto {
+
+            background-color: #faf0eb;
+
+            padding: 18px;
+
+            border-radius: 12px;
+
+            font-size: 17px;
+        }
+
+
+        /* ==============================
+           METAS
+        ============================== */
+
+        .metas {
+
+            list-style: none;
+
+            margin-top: 20px;
+        }
+
+        .metas li {
+
+            background-color: #fff2f3;
+
+            padding: 18px;
+
+            margin-bottom: 12px;
+
+            border-left: 5px solid #d88ca0;
+
+            border-radius: 8px;
+
+            font-size: 17px;
+        }
+
+
+        /* ==============================
+           DATO CURIOSO
+        ============================== */
+
+        .dato {
+
+            background: linear-gradient(
+                135deg,
+                #f8d9dc,
+                #f7e8df
+            );
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            font-size: 21px;
+
+            color: #754554;
+        }
+
+
+        /* ==============================
+           CONTACTO
+        ============================== */
+
+        .contacto {
+
+            text-align: center;
+        }
+
+        .contacto p {
+
+            margin: 10px 0;
+        }
+
+
+        /* ==============================
+           PIE DE PÁGINA
+        ============================== */
+
+        footer {
+
+            background-color: #6f4653;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 35px;
+
+            margin-top: 60px;
+        }
+
+        footer p {
+
+            margin: 8px;
+        }
+
+
+        /* ==============================
+           BOTÓN
+        ============================== */
+
+        .boton {
+
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding: 13px 25px;
+
+            background-color: #d78399;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 25px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+
+            background-color: #b9657c;
+
+            transform: scale(1.05);
+        }
+
+
+        /* ==============================
+           RESPONSIVE
+        ============================== */
+
+        @media (max-width: 750px) {
+
+            header h1 {
+
+                font-size: 34px;
+
+            }
+
+            nav a {
+
+                display: block;
+
+                margin: 10px;
+
+            }
+
+            .presentacion {
+
+                flex-direction: column;
+
+                text-align: center;
+
+            }
+
+            .tarjetas {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .gustos {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            section {
+
+                margin: 25px 15px;
+
+                padding: 25px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================
+         ENCABEZADO
+    =================================== -->
+
+    <header>
+
+        <h1>✨ Ammy Triana Santa ✨</h1>
+
+        <p>Bienvenidos a mi blog personal 💗</p>
+
+    </header>
+
+
+    <!-- ==================================
+         MENU
+    =================================== -->
+
+    <nav>
+
+        <a href="#inicio">Inicio</a>
+
+        <a href="#sobre-mi">Sobre mí</a>
+
+        <a href="#gustos">Mis gustos</a>
+
+        <a href="#hobbies">Hobbies</a>
+
+        <a href="#metas">Mis metas</a>
+
+        <a href="#contacto">Contacto</a>
+
+    </nav>
+
+
+    <!-- ==================================
+         INICIO
+    =================================== -->
+
+    <section id="inicio">
+
+        <h2>🌸 Bienvenidos a mi espacio</h2>
+
+        <div class="presentacion">
+
+            <div class="foto">
+
+                👩🏻‍💻
+
+            </div>
+
+            <div>
+
+                <p>
+
+                    ¡Hola! Soy <strong>Ammy Triana Santa</strong>,
+                    tengo 15 años y vivo en Colombia.
+
+                </p>
+
+                <p>
+
+                    En este blog quiero compartir un poquito
+                    sobre quién soy, las cosas que me gustan,
+                    mis hobbies, mis sueños y algunas cosas
+                    curiosas sobre mí.
+
+                </p>
+
+                <a href="#sobre-mi" class="boton">
+
+                    Conóceme 💕
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================
+         SOBRE MI
+    =================================== -->
+
+    <section id="sobre-mi">
+
+        <h2>💗 Sobre mí</h2>
+
+        <p>
+
+            Tengo 15 años y vivo en Colombia. Soy la mayor
+            de mis dos hermanos, algo que ha hecho que tenga
+            una relación muy especial con ellos.
+
+        </p>
+
+        <br>
+
+        <p>
+
+            Me considero una persona muy sentimental y alegre
+            al mismo tiempo. Me gusta disfrutar los pequeños
+            momentos, compartir con las personas que quiero
+            y crear recuerdos especiales.
+
+        </p>
+
+        <br>
+
+        <p>
+
+            También disfruto mucho viajar y conocer nuevas
+            culturas, porque me parece increíble poder descubrir
+            diferentes lugares y aprender sobre otras formas
+            de vivir.
+
+        </p>
+
+    </section>
+
+
+    <!-- ==================================
+         MIS GUSTOS
+    =================================== -->
+
+    <section id="gustos">
+
+        <h2>🎀 Cosas que me gustan</h2>
+
+        <div class="gustos">
+
+            <div class="gusto">
+
+                🎾 <strong>Deporte:</strong> Tennis
+
+            </div>
+
+            <div class="gusto">
+
+                🌮 <strong>Comida favorita:</strong> Comida mexicana
+
+            </div>
+
+            <div class="gusto">
+
+                🍦 <strong>Postre favorito:</strong> Helados
+
+            </div>
+
+            <div class="gusto">
+
+                🎵 <strong>Música:</strong> Reguetón y vallenato
+
+            </div>
+
+            <div class="gusto">
+
+                🎤 <strong>Artista favorito:</strong> Anuel
+
+            </div>
+
+            <div class="gusto">
+
+                🎬 <strong>Serie favorita:</strong> Acaramelados
+
+            </div>
+
+            <div class="gusto">
+
+                🍰 <strong>Me encanta:</strong> La cocina y todo lo dulce
+
+            </div>
+
+            <div class="gusto">
+
+                ✈️ <strong>Me gusta:</strong> Viajar y conocer culturas
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================
+         HOBBIES
+    =================================== -->
+
+    <section id="hobbies">
+
+        <h2>✨ Mis hobbies</h2>
+
+        <div class="tarjetas">
+
+
+            <div class="tarjeta">
+
+                <div class="icono">🎾</div>
+
+                <h3>Jugar tennis</h3>
+
+                <p>
+
+                    Uno de mis hobbies favoritos es jugar
+                    tennis. Es un deporte que disfruto mucho.
+
+                </p>
+
+            </div>
+
+
+            <div class="tarjeta">
+
+                <div class="icono">🏋️‍♀️</div>
+
+                <h3>Hacer ejercicio</h3>
+
+                <p>
+
+                    Me gusta mantenerme activa y dedicar
+                    tiempo a hacer ejercicio.
+
+                </p>
+
+            </div>
+
+
+            <div class="tarjeta">
+
+                <div class="icono">🎬</div>
+
+                <h3>Ver películas</h3>
+
+                <p>
+
+                    Disfruto mucho ver películas y series
+                    durante mi tiempo libre.
+
+                </p>
+
+            </div>
+
+
+            <div class="tarjeta">
+
+                <div class="icono">📱</div>
+
+                <h3>Ver TikTok</h3>
+
+                <p>
+
+                    Me entretiene ver TikTok y descubrir
+                    contenido nuevo.
+
+                </p>
+
+            </div>
+
+
+            <div class="tarjeta">
+
+                <div class="icono">🍦</div>
+
+                <h3>Comer helado</h3>
+
+                <p>
+
+                    Una de mis cosas favoritas es comer
+                    helado con mi hermana.
+
+                </p>
+
+            </div>
+
+
+            <div class="tarjeta">
+
+                <div class="icono">👩‍🍳</div>
+
+                <h3>Cocinar</h3>
+
+                <p>
+
+                    Me encanta la cocina, especialmente
+                    preparar cosas dulces.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================
+         TECNOLOGÍA
+    =================================== -->
+
+    <section>
+
+        <h2>💻 Mi interés por la tecnología</h2>
+
+        <p>
+
+            La tecnología es mi materia favorita del colegio.
+            Me gusta porque puedo descubrir diferentes páginas
+            y aprender cómo funcionan las cosas relacionadas
+            con la tecnología.
+
+        </p>
+
+        <br>
+
+        <p>
+
+            También me parece interesante aprender a crear
+            páginas web y descubrir que con código puedo
+            construir mis propios proyectos.
+
+        </p>
+
+    </section>
+
+
+    <!-- ==================================
+         MIS METAS
+    =================================== -->
+
+    <section id="metas">
+
+        <h2>🌷 Mis metas y sueños</h2>
+
+        <p>
+
+            Tengo varios sueños que me gustaría cumplir
+            durante mi vida:
+
+        </p>
+
+        <ul class="metas">
+
+            <li>
+
+                🎓 Estudiar y prepararme para tener un buen futuro.
+
+            </li>
+
+            <li>
+
+                🌎 Poder estudiar en otro país y conocer
+                nuevas culturas.
+
+            </li>
+
+            <li>
+
+                💕 Llegar a formar una familia.
+
+            </li>
+
+            <li>
+
+                ✈️ Viajar y conocer muchos lugares del mundo.
+
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- ==================================
+         DATO CURIOSO
+    =================================== -->
+
+    <section>
+
+        <h2>🌸 Un dato curioso sobre mí</h2>
+
+        <div class="dato">
+
+            💕 Soy una persona muy sentimental y alegre
+            al mismo tiempo.
+
+            <br><br>
+
+            Me gusta disfrutar de los momentos especiales
+            y compartirlos con las personas que quiero.
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================
+         CONTACTO
+    =================================== -->
+
+    <section id="contacto">
+
+        <div class="contacto">
+
+            <h2>💌 Gracias por visitar mi blog</h2>
+
+            <p>
+
+                Espero que hayas disfrutado conocer un poquito
+                más sobre mí.
+
+            </p>
+
+            <p>
+
+                🌷 ¡Gracias por pasar por aquí! 🌷
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================
+         PIE DE PÁGINA
+    =================================== -->
+
+    <footer>
+
+        <p>
+
+            💗 Mi Blog Personal
+
+        </p>
+
+        <p>
+
+            Creado por Ammy Triana Santa
+
+        </p>
+
+        <p>
+
+            © 2026
+
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
